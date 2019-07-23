@@ -17,3 +17,5 @@ $ npm start
 The purpose of this app is to create a profile for users to plan their next
 vacation destination.  Users can add, edit, create, and delete destinations and
 track the places they have travelled for future use within the app.
+
+[My Project Board](https://trello.com/b/kghLfLia/project-3)
