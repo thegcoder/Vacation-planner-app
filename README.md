@@ -18,9 +18,15 @@ The purpose of this app is to create a profile for users to plan their next
 vacation destination.  Users can add, edit, create, and delete destinations and
 track the places they have travelled for future use within the app.
 
+## Version 2 goals & wishes
+What I would like to add in version 2 would be a working calendar where users
+ could see their dates of travel.  I would also like each user to have destinations
+  shared with them via data tracking capabilities.
+
+
 CSS rules are being used to style this application
 
-[Bootstrap](https://getbootstrap.com/docs/4.3)
+[Bootstrap](https://getbootstrap.com/docs/4.3)  
 
 [My Project Board](https://trello.com/b/kghLfLia/project-3)
 
