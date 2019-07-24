@@ -4,6 +4,7 @@
 
 ## Dependencies
 [React](https://reactjs.org/)
+
 [Nodejs](https://nodejs.org/)
 
 ### How to run
@@ -25,6 +26,9 @@ What I would like to add in version 2 would be a working calendar where users
 
 
 CSS rules are being used to style this application
+
+
+[Personal GitHub Repository](https://github.com/thegcoder/Vacation-planner-app)
 
 [Bootstrap](https://getbootstrap.com/docs/4.3)  
 
