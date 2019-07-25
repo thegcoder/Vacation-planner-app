@@ -40,10 +40,9 @@ class App extends Component {
     return (
       <div>
         <div className='nav'>
-          <div className='nav-item'><span className='nav-logo'>Vacation</span></div>
-          <div className='nav-item'><Link to='/'>Home</Link></div>
+          <div className='nav-item'><Link to='/'><span className='nav-logo'>VP</span></Link></div>
           <div className='nav-item'><Link to='/profile'>Profile</Link></div>
-          <div className='nav-item'><Link to='/destinations'>Destination</Link></div>
+          <div className='nav-item'><Link to='/destinations'>Destinations</Link></div>
         </div>
 
         <div className='main'>

@@ -7,9 +7,7 @@ const newDestinationModelSchema = new mongoose.Schema({
   description: String
 })
 
-
 const DestinationCollection = mongoose.model('User', newDestinationModelSchema)
-
 
 
 function getDestination(destinationId) {

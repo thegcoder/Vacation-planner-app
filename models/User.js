@@ -1,12 +1,9 @@
 const mongoose = require('./connection.js')
 
-
-
 const newUserModelSchema = new mongoose.Schema({
   name: String,
   description: String
 })
-
 
 const UserCollection = mongoose.model('User', UserModelSchema)
 
