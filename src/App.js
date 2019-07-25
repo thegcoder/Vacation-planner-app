@@ -7,7 +7,7 @@ import {
   withRouter
 } from 'react-router-dom'
 import axios from 'axios'
-import Destination from './Components/Destination'
+import Destinations from './Components/Destinations'
 import Home from './Components/Home'
 
 import './App.css'
@@ -47,11 +47,10 @@ class App extends Component {
 
         <div className='main'>
           <Switch>
-            <Route exact path='/stocks' render={() => <Dashboard stocks={this.state.stocks} />} />
-            <Route path='/search' render={() => <Search handleTrackStock={this.handleTrackStock} />} />
-            <Route path='/about' component={About} />
-            <Route path='/stocks/:symbol' component={Stock} />
-            <Route path='/*' render={() => <Redirect to='/stocks' />} />
+            <Route path='/' component={Home} />
+            <Route path='/destinations' component={Destination} />
+            <Route path='/profile' component={Profile} />
+            <Route path='/*' render={() => <Redirect to='/' />} />
           </Switch>
         </div>
       </div>
