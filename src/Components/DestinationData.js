@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 const DestinationData = (props) => {
   return (
     <div>
-      <h1>Destination: {props.city}, {props.country}</h1>
+      <h1>Destination: {props.city}, {props.state} {props.country}</h1>
 
       <p>Description: {props.description}</p>
     </div>

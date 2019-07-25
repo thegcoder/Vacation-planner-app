@@ -9,6 +9,7 @@ export default class Destinations extends Component {
             city='Atlanta'
             country='USA'
             description='Marinate on that'
+            state='GA'
           />
         </div>
     );
