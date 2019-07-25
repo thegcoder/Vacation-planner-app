@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import UserData from './UserData';
 
 export default class User extends Component {
   render() {
     return (
         <div>
-          <h2>User Profile</h2>
+          <UserData
+            name='The G Coder'
+            email='thegcoder@whatever.com'
+          />
         </div>
     );
   }
