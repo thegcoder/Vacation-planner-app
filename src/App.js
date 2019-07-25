@@ -3,10 +3,9 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Redirect,
   Switch,
 } from 'react-router-dom'
-// import axios from 'axios'
+
 import Home from './Components/Home'
 import Destinations from './Components/Destinations'
 import User from './Components/User'
