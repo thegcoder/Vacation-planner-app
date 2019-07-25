@@ -9,9 +9,12 @@ const newDestinationModelSchema = new mongoose.Schema({
 
 const DestinationCollection = mongoose.model('User', newDestinationModelSchema)
 
-
+function getAllDestinations() {
+  return DestinationCollection.find({
+  })
+}
 function getDestination(destinationId) {
-  return DestinationCollection.findByElementId(destinationId)
+  return DestinationCollection.findById(destinationId)
 }
 
 function createDestination(newDestination) {
@@ -19,11 +22,11 @@ function createDestination(newDestination) {
 }
 
 function updateDestination(destinationId, updatedDestination) {
-  return DestinationCollection.findByElementIdAndUpdate(destinationId,updatedDestination,{new: true})
+  return DestinationCollection.findByIdAndUpdate(destinationId,updatedDestination,{new: true})
 }
 
 function deleteDestination(destinationId) {
-  return DestinationCollection.findByElementIdAndDelete(destinationId)
+  return DestinationCollection.findByIdAndDelete(destinationId)
 }
 module.exports = {
   getDestination,
