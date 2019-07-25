@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-class About extends Component {
+export default class Home extends Component {
   render() {
     return (
         <div>
-          <h2>Vacation Planner App</h2>
+          <h2>Vacation Planner App!</h2>
         </div>
     );
   }
 }
-
-export default About
