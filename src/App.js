@@ -49,7 +49,7 @@ class App extends Component {
         <div className='main'>
           <Switch>
             <Route path='/' component={Home} />
-            <Route path='/destinations' component={Destination} />
+            <Route path='/destinations' component={Destinations} />
             <Route path='/profile' component={User} />
             <Route path='/*' render={() => <Redirect to='/' />} />
           </Switch>
