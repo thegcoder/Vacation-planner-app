@@ -7,11 +7,10 @@ import {
   withRouter
 } from 'react-router-dom'
 import axios from 'axios'
-import Dashboard from './Components/Dashboard'
-import Search from './Components/Search'
-import About from './Components/About'
-import Stock from './Components/Stocks'
-import './Components/App.css'
+import Destination from './Components/Destination'
+import Home from './Components/Home'
+
+import './App.css'
 
 class App extends Component {
   constructor (props) {
@@ -40,10 +39,10 @@ class App extends Component {
     return (
       <div>
         <div className='nav'>
-          <div className='nav-item'><span className='nav-logo'>iStocks</span></div>
-          <div className='nav-item'><Link to='/stocks'>Home</Link></div>
-          <div className='nav-item'><Link to='/search'>Search</Link></div>
-          <div className='nav-item'><Link to='/about'>About</Link></div>
+          <div className='nav-item'><span className='nav-logo'>Vacation</span></div>
+          <div className='nav-item'><Link to='/'>Home</Link></div>
+          <div className='nav-item'><Link to='/profile'>Profile</Link></div>
+          <div className='nav-item'><Link to='/destinations'>Destination</Link></div>
         </div>
 
         <div className='main'>
