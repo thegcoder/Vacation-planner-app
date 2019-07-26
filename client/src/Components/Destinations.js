@@ -31,13 +31,13 @@ export default class Destinations extends Component {
             </ul>
             <form>
   //get request
-            export default class PersonList extends React.Component {
+  export default class PersonList extends React.Component {
   state = {
     persons: []
   }
 
   componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
+    axios.get(`https://restcountries.eu/rest/v2/capital/{capital}`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
@@ -69,7 +69,7 @@ export default class PersonList extends React.Component {
       name: this.state.name
     };
 
-    axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+    axios.post(`https://restcountries.eu/rest/v2/capital/{capital}`, { user })
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -81,7 +81,7 @@ export default class PersonList extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Person Name:
+            City Name:
             <input type="text" name="name" onChange={this.handleChange} />
           </label>
           <button type="submit">Add</button>
@@ -91,7 +91,7 @@ export default class PersonList extends React.Component {
   }
 }
 //delete form
-export default class PersonList extends React.Component {
+export default class CityList extends React.Component {
   state = {
     id: '',
   }
@@ -103,7 +103,7 @@ export default class PersonList extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    axios.delete(`https://jsonplaceholder.typicode.com/users/${this.state.id}`)
+    axios.delete(`https://restcountries.eu/rest/v2/capital/{capital}/users/${this.state.id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -115,7 +115,7 @@ export default class PersonList extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Person ID:
+            City ID:
             <input type="text" name="id" onChange={this.handleChange} />
           </label>
           <button type="submit">Delete</button>
@@ -125,7 +125,7 @@ export default class PersonList extends React.Component {
   }
 }
               <input type="text" name="country"/>
-            </form>antraveous1
+            </form>
         </div>
     );
   }
