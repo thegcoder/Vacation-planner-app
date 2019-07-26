@@ -1,4 +1,4 @@
-const mongoose = require('./connection.js')
+const mongoose = require('./connection.js')// XXX: 
 
 
 // destination
@@ -10,8 +10,7 @@ const newDestinationModelSchema = new mongoose.Schema({
 const DestinationCollection = mongoose.model('User', newDestinationModelSchema)
 
 function getAllDestinations() {
-  return DestinationCollection.find({
-  })
+  return DestinationCollection.find({})
 }
 function getDestination(destinationId) {
   return DestinationCollection.findById(destinationId)

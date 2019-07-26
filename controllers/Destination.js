@@ -37,7 +37,7 @@ const destinationRouter = express.Router()
  * TODO: delete this handler; it's just a sample
  */
 destinationRouter.get('/', (req, res) => {
-  res.json(destinationApi.getHelloWorldString())
+    res.json(destinationApi.getHelloWorldString())
 })
 
 /* Step 6
