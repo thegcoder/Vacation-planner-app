@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DestinationData from './DestinationData';
 
 import axios from 'axios'
 
@@ -22,38 +21,10 @@ export default class Destinations extends Component {
         // always executed
       });
   }
-
-  render() {
-    return (
-        <div>
-            <ul>
-              { this.state.destinations.map(destination => <li>{destination.name}</li>)}
-            </ul>
-            <form>
-  //get request
-  export default class PersonList extends React.Component {
-  state = {
-    persons: []
-  }
-
-  componentDidMount() {
-    axios.get(`https://restcountries.eu/rest/v2/capital/{capital}`)
-      .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-      })
-  }
-
-  render() {
-    return (
-      <ul>
-        { this.state.persons.map(person => <li>{person.name}</li>)}
-      </ul>
-    )
-  }
 }
+
 //postinstall
-export default class PersonList extends React.Component {
+export class CountryList extends React.Component {
   state = {
     name: '',
   }
@@ -91,7 +62,7 @@ export default class PersonList extends React.Component {
   }
 }
 //delete form
-export default class CityList extends React.Component {
+export class CityList extends React.Component {
   state = {
     id: '',
   }
@@ -122,11 +93,5 @@ export default class CityList extends React.Component {
         </form>
       </div>
     )
-  }
-}
-              <input type="text" name="country"/>
-            </form>
-        </div>
-    );
   }
 }
