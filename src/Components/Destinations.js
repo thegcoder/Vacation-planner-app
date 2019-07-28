@@ -37,7 +37,9 @@ export default class Destinations extends Component {
           <h2>Destinations</h2>
           {this.state.destinations.map((destination, index) => {
             return (
-              <div key={destination._id}><Link to={`#destination=${destination._id}`}>{destination.city}, {destination.country}</Link></div>
+              <div key={destination._id}>
+                <Link to={{ pathname:`/destination/${destination._id}`, state: { destination } }}>{destination.city}, {destination.country}</Link>
+              </div>
             )
           })}
         </div>

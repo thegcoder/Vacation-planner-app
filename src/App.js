@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Switch,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-import Home from './Components/Home'
-import Destinations from './Components/Destinations'
-import Users from './Components/Users'
-import UserEdit from './Components/UserEdit'
+import Home from './Components/Home';
+import Destinations from './Components/Destinations';
+import Users from './Components/Users';
+import UserData from './Components/UserData';
+import DestinationData from './Components/DestinationData';
 
-import './App.css'
+import './App.css';
 
  export default class App extends Component {
   render () {
@@ -21,13 +22,14 @@ import './App.css'
           <div className='nav'>
             <div className='nav-item'><Link to={'/'}><span className='nav-logo'>VP</span></Link></div>
             <div className='nav-item'><Link to={'/destinations'}>Destinations</Link></div>
-            <div className='nav-item'><Link to={'/users'}>Users</Link></div>
+            <div className='nav-item'><Link to={'/users/view'}>Users</Link></div>
           </div>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/destinations' component={Destinations} />
+            <Route path='/destination/:id' component={DestinationData} />
             <Route path='/users' component={Users} />
-            <Route path='/users/edit' component={UserEdit} />
+            <Route path='/user/:id' component={UserData} />
           </Switch>
         </div>
       </Router>

@@ -1,18 +1,23 @@
-import React, {PropTypes} from 'react';
+import React, { Component } from 'react';
 
-const DestinationData = (props) => {
-  return (
-    <div>
-      <h1>Destination: {props.city}, {props.state} {props.country}</h1>
+export default class UserData extends Component {
+  constructor(props) {
+    super(props);
 
-      <p>Description: {props.description}</p>
-    </div>
-  )
-};
+    this.state = props.location.state;
+  }
 
-DestinationData.propTypes = {
-  city: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired
-};
-
-export default DestinationData
+  render() {
+    return (
+      <div>
+        <h2>City: {this.state.destination.city}</h2>
+        <ul>
+          <li>
+            <h3>Country: {this.state.destination.country}</h3>
+            <p>{this.state.destination.description}</p>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+}

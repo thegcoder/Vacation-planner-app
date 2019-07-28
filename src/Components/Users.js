@@ -20,7 +20,6 @@ export default class Users extends Component {
       .then(res => {
           const users = res.data;
           this.setState({ users });
-          console.log(this.state)
       })
       .catch(function (error) {
         // handle error
@@ -37,7 +36,9 @@ export default class Users extends Component {
           <h2>Users</h2>
           {this.state.users.map((user, index) => {
             return (
-              <div key={user._id}><Link to={`#profile=${user._id}`}>{user.name}</Link></div>
+              <div key={user._id}>
+                <Link to={{ pathname:`/user/${user._id}`, state: { user } }}>{user.name}</Link>
+              </div>
             )
           })}
         </div>
