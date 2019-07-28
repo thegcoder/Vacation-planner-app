@@ -27,9 +27,9 @@ What I would like to add in version 2 would be a working calendar where users
 
 CSS rules are being used to style this application
 
-[Server API](https://github.com/thegcoder/vacation-planner-api)
+[Server API](https://vacation-planner-api.herokuapp.com/)
 
-[Heroku](https://dashboard.heroku.com/apps/vacation-planner-app1)
+[Heroku](https://vacation-planner-app1.herokuapp.com/)
 
 [Personal GitHub Repository](https://github.com/thegcoder/Vacation-planner-app)
 
