@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom'
 
 const axios = require('axios');
 
-const api = 'https://vacation-planner-api.herokuapp.com/api/all/destinations';
+const api = 'https://vacation-planner-api.herokuapp.com/api/all/users';
 
-export default class Destinations extends Component {
+export default class Users extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      destinations: []
+      users: []
     }
   }
 
   componentDidMount() {
     axios.get(api)
       .then(res => {
-          const destinations = res.data;
-          this.setState({ destinations });
+          const users = res.data;
+          this.setState({ users });
           console.log(this.state)
       })
       .catch(function (error) {
@@ -34,10 +34,10 @@ export default class Destinations extends Component {
   render() {
     return (
         <div>
-          <h2>Destinations</h2>
-          {this.state.destinations.map((destination, index) => {
+          <h2>Users</h2>
+          {this.state.users.map((user, index) => {
             return (
-              <div key={destination._id}><Link to={`#destination=${destination._id}`}>{destination.city}, {destination.country}</Link></div>
+              <div key={user._id}><Link to={`#profile=${user._id}`}>{user.name}</Link></div>
             )
           })}
         </div>

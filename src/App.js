@@ -8,7 +8,8 @@ import {
 
 import Home from './Components/Home'
 import Destinations from './Components/Destinations'
-import User from './Components/User'
+import Users from './Components/Users'
+import UserEdit from './Components/UserEdit'
 
 import './App.css'
 
@@ -19,13 +20,14 @@ import './App.css'
         <div>
           <div className='nav'>
             <div className='nav-item'><Link to={'/'}><span className='nav-logo'>VP</span></Link></div>
-            <div className='nav-item'><Link to={'/profile'}>Profile</Link></div>
             <div className='nav-item'><Link to={'/destinations'}>Destinations</Link></div>
+            <div className='nav-item'><Link to={'/users'}>Users</Link></div>
           </div>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/destinations' component={Destinations} />
-            <Route path='/profile' component={User} />
+            <Route path='/users' component={Users} />
+            <Route path='/users/edit' component={UserEdit} />
           </Switch>
         </div>
       </Router>

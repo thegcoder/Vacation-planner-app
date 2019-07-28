@@ -3,8 +3,7 @@ import React, {PropTypes} from 'react';
 const UserData = (props) => {
   return (
     <div>
-      <h1>Profile: {props.name}</h1>
-
+      <h2>User: {props.name}</h2>
       <ul>
         <li>Email: {props.email}</li>
       </ul>
