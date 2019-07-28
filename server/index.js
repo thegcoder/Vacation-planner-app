@@ -1,77 +1,94 @@
-/*
- * This is the template for a server.js file.  Follow the steps below and read
- * the comments for creating your own (or you can just copy this file).
- */
+const express = require('express');
+const app = express();
 
-/* Step 1
- *
- * Import needed packages
- *
- */
-const express = require('express')
-const app = express()
+const controllers = require('./controllers/')
 
-/* Step 2
- *
- * import routers from controllers/
- *
- */
-const { destinationRouter } = require('./controllers/destination.js')
-
-
-/* Step 3
- *
- * Register middleware...
- */
-
-/* Step 3.a
- * ...to parse the body of the HTTP requests from a URL encoded string
- */
 app.use(express.urlencoded({extended: true}))
 
-/* Step 3.b
- *
- * ...to parse the body of the HTTP requests from a JSON string
- */
 app.use(express.json())
 
+app.get('/api/all/:type', async function (req, res) {
+    let type = req.params.type;
+    let value = {};
 
-/* Step 3.c
- *
- * use the `./client/build` directory to host static resources such as css and
- * image files
- */
-app.use(express.static(`${__dirname}/client/build`))
+    console.log(`Get all ${type}`);
 
+    try {
+      value = await controllers.all(type);
+    } catch (error) {
+      value = error;
+    }
 
-/* Step 4
- *
- * add router for the application to use. The first argument is a prefix to all
- * the paths defined in the router.
- */
-app.use('/api/helloworld', destinationRouter)
+    res.json(value);
+});
 
-/* Step 5
- *
- * add catch all route to serve up the built react app for any request not made to our
- * /api/... routes.
- */
-app.get('/*', (req, res) => {
-    res.sendFile(`${__dirname}/client/build/index.html`)
-})
+app.post('/api/create/:type', async function (req, res) {
+    let type = req.params.type;
+    let data = req.body;
+    let value = {};
 
-/* Step 6
- *
- * Set the port the server is to run on
- *
- * NOTE: keep these lines at the bottom of the file
- */
+    console.log(`Create ${type}`);
+
+    try {
+      value = await controllers.create(type, data);
+    } catch (error) {
+      value = error;
+    }
+
+    res.json(value);
+});
+
+app.get('/api/read/:type/:id', async function (req, res) {
+    let type = req.params.type;
+    let id = req.params.id;
+    let value = {};
+
+    console.log(`Read type ${type} with id ${id}`);
+
+    try {
+      value = await controllers.read(type, id);
+    } catch (error) {
+      value = error;
+    }
+
+    res.json(value);
+});
+
+app.post('/api/update/:type/:id', async function (req, res) {
+    let type = req.params.type;
+    let id = req.params.id;
+    let data = req.body;
+    let value = {};
+
+    console.log(`Update type ${type} with id ${id}`);
+
+    try {
+      value = await controllers.update(type, id, data);
+    } catch (error) {
+      value = error;
+    }
+
+    res.json(value);
+});
+
+app.post('/api/delete/:type/:id', async function (req, res) {
+    let type = req.params.type;
+    let id = req.params.id;
+    let value = {};
+
+    console.log(`Get all ${type}`);
+
+    try {
+      value = await controllers.deleter(type, id);
+    } catch (error) {
+      value = error;
+    }
+
+    res.json(value);
+});
+
 const PORT = process.env.PORT || 3001
 
-/* Step 7
- *
- * Start the server
- */
 app.listen(PORT, () => {
     console.log(`App is listening on PORT ${PORT}`)
 })
