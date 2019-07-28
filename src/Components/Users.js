@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const axios = require('axios');
 
@@ -19,7 +19,8 @@ export default class Users extends Component {
     axios.get(api)
       .then(res => {
           const users = res.data;
-          this.setState({ users });
+          console.log(users);
+          this.setState({users});
       })
       .catch(function (error) {
         // handle error
@@ -37,7 +38,7 @@ export default class Users extends Component {
           {this.state.users.map((user, index) => {
             return (
               <div key={user._id}>
-                <Link to={{ pathname:`/user/${user._id}`, state: { user } }}>{user.name}</Link>
+                <Link to={`/user/${user._id}`}>{user.name}</Link>
               </div>
             )
           })}

@@ -10,6 +10,7 @@ import Home from './Components/Home';
 import Destinations from './Components/Destinations';
 import Users from './Components/Users';
 import UserData from './Components/UserData';
+import UserEdit from './Components/UserEdit';
 import DestinationData from './Components/DestinationData';
 
 import './App.css';
@@ -29,6 +30,7 @@ import './App.css';
             <Route path='/destinations' component={Destinations} />
             <Route path='/destination/:id' component={DestinationData} />
             <Route path='/users' component={Users} />
+            <Route path='/user/edit/:id' component={UserEdit} />
             <Route path='/user/:id' component={UserData} />
           </Switch>
         </div>

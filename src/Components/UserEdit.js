@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 
 const axios = require('axios');
 
-const api = 'https://vacation-planner-api.herokuapp.com/api/create/users';
+const api = 'https://vacation-planner-api.herokuapp.com/api/';
 
-export default class User extends Component {
+export default class UserEdit extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
-      name: '',
-      email: ''
+      email: '',
+      id: '',
+      name: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,9 +39,31 @@ export default class User extends Component {
 
     const history = this.props.history;
 
-    axios.post(api, data)
-      .then(function (response) {
-        history.push(`#${response.data._id}`);
+    const id = this.state.id;
+
+    axios.post(`${api}update/users/${id}`, data)
+      .then(res => {
+        history.push(`/user/${res.data._id}`);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }
+
+  componentDidMount() {
+    const { id } = this.props.match.params;
+
+    axios.get(`${api}read/users/${id}`)
+      .then(res => {
+        this.setState({
+          email: res.data.email,
+          id: res.data._id,
+          name: res.data.name
+        });
       })
       .catch(function (error) {
         // handle error
@@ -53,15 +77,17 @@ export default class User extends Component {
   render() {
     return (
         <div>
-          <h2>Create A New Profile</h2>
+          <h2>Edit Profile</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
-              <label>Name</label>
-              <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+              <div>{this.state.name}</div>
+              <label>Edit:</label>
+              <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
             </div>
             <div>
-              <label>Email</label>
-              <input type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
+              <div>{this.state.email}</div>
+              <label>Edit:</label>
+              <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
             </div>
             <button>Submit</button>
           </form>

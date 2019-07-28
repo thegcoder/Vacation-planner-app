@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const axios = require('axios');
 
@@ -20,7 +20,6 @@ export default class Destinations extends Component {
       .then(res => {
           const destinations = res.data;
           this.setState({ destinations });
-          console.log(this.state)
       })
       .catch(function (error) {
         // handle error
