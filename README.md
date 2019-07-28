@@ -31,7 +31,7 @@ CSS rules are being used to style this application
 
 [Heroku](https://vacation-planner-app1.herokuapp.com/)
 
-[Personal GitHub Repository](https://github.com/thegcoder/Vacation-planner-app)
+[Personal GitHub Repository](https://github.com/thegcoder/vacation-planner-app)
 
 [Bootstrap](https://getbootstrap.com/docs/4.3)  
 
