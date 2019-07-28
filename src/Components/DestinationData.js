@@ -40,7 +40,12 @@ export default class UserData extends Component {
             <p>{this.state.destination.description}</p>
           </li>
         </ul>
-        <Link to={{ pathname:`/destination/edit/${this.state.destination._id}`, state: { destination: this.state.destination } }}>Edit</Link>
+        <Link to={{ pathname:`/destination/edit/${this.state.destination._id}`, state: { destination: this.state.destination } }}>
+          <button>Edit</button>
+        </Link>
+        <Link to={{ pathname:`/destination/delete/${this.state.destination._id}`, state: { destination: this.state.destination } }}>
+          <button>Delete</button>
+        </Link>
       </div>
     )
   }

@@ -37,7 +37,12 @@ export default class UserData extends Component {
         <ul>
           <li>Email: {this.state.user.email}</li>
         </ul>
-        <Link to={{ pathname:`/user/edit/${this.state.user._id}`, state: { user: this.state.user } }}>Edit</Link>
+        <Link to={{ pathname:`/user/edit/${this.state.user._id}`, state: { user: this.state.user } }}>
+          <button>Edit</button>
+        </Link>
+        <Link to={{ pathname:`/user/delete/${this.state.user._id}`, state: { user: this.state.user } }}>
+          <button>Delete</button>
+        </Link>
       </div>
     )
   }

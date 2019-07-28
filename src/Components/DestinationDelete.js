@@ -5,32 +5,18 @@ const axios = require('axios');
 
 const api = 'https://vacation-planner-api.herokuapp.com/api/';
 
-export default class UserEdit extends Component {
+export default class DestinationDelete extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
-      id: '',
-      name: ''
+      country: '',
+      city: '',
+      description: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    switch (event.target.name) {
-      case 'email':
-        this.setState({email: event.target.value});
-        break;
-      case 'name':
-        this.setState({name: event.target.value});
-        break;
-      default:
-        break;
-    }
   }
 
   handleSubmit(event) {
@@ -42,9 +28,9 @@ export default class UserEdit extends Component {
 
     const id = this.state.id;
 
-    axios.post(`${api}update/users/${id}`, data)
+    axios.post(`${api}delete/destinations/${id}`, data)
       .then(res => {
-        history.push(`/user/${res.data._id}`);
+        history.push(`/destinations`);
       })
       .catch(function (error) {
         // handle error
@@ -58,12 +44,13 @@ export default class UserEdit extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
 
-    axios.get(`${api}read/users/${id}`)
+    axios.get(`${api}read/destinations/${id}`)
       .then(res => {
         this.setState({
-          email: res.data.email,
-          id: res.data._id,
-          name: res.data.name
+          country: res.data.country,
+          city: res.data.city,
+          description: res.data.description,
+          id: res.data._id
         });
       })
       .catch(function (error) {
@@ -78,21 +65,20 @@ export default class UserEdit extends Component {
   render() {
     return (
         <div>
-          <h2>Edit Profile</h2>
+          <h2>Delete Destination</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
-              <div>{this.state.name}</div>
-              <label>Edit:</label>
-              <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
+              <div>{this.state.country}</div>
             </div>
             <div>
-              <div>{this.state.email}</div>
-              <label>Edit:</label>
-              <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
+              <div>{this.state.city}</div>
+            </div>
+            <div>
+              <div>{this.state.description}</div>
             </div>
             <button>Submit</button>
           </form>
-          <Link to={`/user/${this.state.id}`}><button>Cancel</button></Link>
+          <Link to={`/destination/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }

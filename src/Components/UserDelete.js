@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const api = 'https://vacation-planner-api.herokuapp.com/api/';
 
-export default class UserEdit extends Component {
+export default class UserDelete extends Component {
 
   constructor(props) {
     super(props);
@@ -16,21 +16,7 @@ export default class UserEdit extends Component {
       name: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    switch (event.target.name) {
-      case 'email':
-        this.setState({email: event.target.value});
-        break;
-      case 'name':
-        this.setState({name: event.target.value});
-        break;
-      default:
-        break;
-    }
   }
 
   handleSubmit(event) {
@@ -42,9 +28,9 @@ export default class UserEdit extends Component {
 
     const id = this.state.id;
 
-    axios.post(`${api}update/users/${id}`, data)
+    axios.post(`${api}delete/users/${id}`, data)
       .then(res => {
-        history.push(`/user/${res.data._id}`);
+        history.push(`/users`);
       })
       .catch(function (error) {
         // handle error
@@ -78,17 +64,13 @@ export default class UserEdit extends Component {
   render() {
     return (
         <div>
-          <h2>Edit Profile</h2>
+          <h2>Delete User</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
               <div>{this.state.name}</div>
-              <label>Edit:</label>
-              <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
             </div>
             <div>
               <div>{this.state.email}</div>
-              <label>Edit:</label>
-              <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
             </div>
             <button>Submit</button>
           </form>

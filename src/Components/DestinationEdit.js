@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const axios = require('axios');
 
@@ -100,6 +101,7 @@ export default class DestinationEdit extends Component {
             </div>
             <button>Submit</button>
           </form>
+          <Link to={`/destination/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }

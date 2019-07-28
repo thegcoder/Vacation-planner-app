@@ -19,7 +19,6 @@ export default class Users extends Component {
     axios.get(api)
       .then(res => {
           const users = res.data;
-          console.log(users);
           this.setState({users});
       })
       .catch(function (error) {
