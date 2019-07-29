@@ -34,6 +34,7 @@ export default class Destinations extends Component {
     return (
         <div>
           <h2>Destinations</h2>
+          <Link to={`/destination/create`}><h3>Create Destination</h3></Link>
           {this.state.destinations.map((destination, index) => {
             return (
               <div key={destination._id}>
@@ -44,7 +45,6 @@ export default class Destinations extends Component {
               </div>
             )
           })}
-          <Link to={`/destination/create`}>Create Destination</Link>
         </div>
     );
   }

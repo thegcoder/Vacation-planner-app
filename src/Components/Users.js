@@ -34,6 +34,7 @@ export default class Users extends Component {
     return (
         <div>
           <h2>Users</h2>
+          <Link to={`/user/create`}><h3>Create User</h3></Link>
           {this.state.users.map((user, index) => {
             return (
               <div key={user._id}>
@@ -45,7 +46,6 @@ export default class Users extends Component {
               </div>
             )
           })}
-          <Link to={`/user/create`}>Create User</Link>
         </div>
     );
   }
