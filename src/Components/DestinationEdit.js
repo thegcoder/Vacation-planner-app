@@ -91,22 +91,22 @@ export default class DestinationEdit extends Component {
           <form onSubmit={this.handleSubmit}>
             <div>
               <div>{this.state.country}</div>
-              <label>Edit:</label>
+              <label>Country:</label>
               <input type="text" name="country" placeholder={this.state.country} onChange={this.handleChange}/>
             </div>
             <div>
               <div>{this.state.city}</div>
-              <label>Edit:</label>
+              <label>City:</label>
               <input type="text" name="city" placeholder={this.state.city} onChange={this.handleChange}/>
             </div>
             <div>
               <div>{this.state.imageUrl}</div>
-              <label>Edit:</label>
+              <label>Image Url:</label>
               <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
             <div>
               <div>{this.state.description}</div>
-              <label>Edit:</label>
+              <label>Description:</label>
               <input type="text" name="description" placeholder={this.state.description} onChange={this.handleChange}/>
             </div>
             <button>Submit</button>
