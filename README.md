@@ -24,6 +24,11 @@ What I would like to add in version 2 would be a working calendar where users
  could see their dates of travel.  I would also like each user to have destinations
   shared with them via data tracking capabilities.
 
+##Planning Process
+[Stream of Thought](https://media.git.generalassemb.ly/user/20868/files/784c9e80-b1f2-11e9-821b-deec09db55be)
+[ERD](https://user-images.githubusercontent.com/46980815/61741564-3093c600-ad5f-11e9-8026-47e03e769d79.jpg)
+[Wireframe](https://user-images.githubusercontent.com/46980815/61741746-8d8f7c00-ad5f-11e9-811b-faa33c0b4f49.jpg)
+[My Project Board](https://trello.com/b/kghLfLia/project-3)
 
 CSS rules are being used to style this application
 
@@ -35,10 +40,9 @@ CSS rules are being used to style this application
 
 [Bootstrap](https://getbootstrap.com/docs/4.3)  
 
-[My Project Board](https://trello.com/b/kghLfLia/project-3)
 
-[ERD](https://user-images.githubusercontent.com/46980815/61741564-3093c600-ad5f-11e9-8026-47e03e769d79.jpg)
 
-[Wireframe](https://user-images.githubusercontent.com/46980815/61741746-8d8f7c00-ad5f-11e9-811b-faa33c0b4f49.jpg)
+
+
 
 [Countries API](https://restcountries.eu/#api-endpoints-all)
