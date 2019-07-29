@@ -38,9 +38,9 @@ export default class Destinations extends Component {
             return (
               <div key={destination._id}>
                 <Link to={`/destination/${destination._id}`}>
-                  <img src={`${destination.imageUrl}?text=${destination.city}, ${destination.country}`} alt={destination.city} />
+                  <img src={destination.imageUrl} alt={destination.city} />
                 </Link>
-                <hr />
+                {destination.city}, {destination.country}
               </div>
             )
           })}

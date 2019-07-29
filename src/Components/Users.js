@@ -38,8 +38,9 @@ export default class Users extends Component {
             return (
               <div key={user._id}>
                 <Link to={`/user/${user._id}`}>
-                  <img src={`${user.imageUrl}?text=${user.name}`} alt={user.name} />
+                  <img src={user.imageUrl} alt={user.name} />
                 </Link>
+                {user.name}
                 <hr/>
               </div>
             )
