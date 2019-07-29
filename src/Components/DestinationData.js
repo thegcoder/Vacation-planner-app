@@ -34,18 +34,18 @@ export default class UserData extends Component {
     return (
       <div>
         <h2>City: {this.state.destination.city}</h2>
-        <ul>
-          <li>
+        <div>
+          <div className="displayImage">
             <img src={this.state.destination.imageUrl} alt={this.state.destination.name}/>
-            <h3>Country: {this.state.destination.country}</h3>
-            <p>{this.state.destination.description}</p>
-          </li>
-        </ul>
+          </div>
+          <h3>Country: {this.state.destination.country}</h3>
+          <p>{this.state.destination.description}</p>
+        </div>
         <Link to={{ pathname:`/destination/edit/${this.state.destination._id}`, state: { destination: this.state.destination } }}>
-          <button>Edit</button>
+          <button className='search-btn'>Edit</button>
         </Link>
         <Link to={{ pathname:`/destination/delete/${this.state.destination._id}`, state: { destination: this.state.destination } }}>
-          <button>Delete</button>
+          <button className='search-btn'>Delete</button>
         </Link>
       </div>
     )

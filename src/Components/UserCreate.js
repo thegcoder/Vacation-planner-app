@@ -74,9 +74,9 @@ export default class UserCreate extends Component {
               <div>Image Url: {this.state.imageUrl}</div>
               <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
-            <button>Submit</button>
+            <button className='search-btn'>Submit</button>
+            <Link to={'/users'}><Link to={'/users'}><input type="button" value="Cancel" className='search-btn' /></Link></Link>
           </form>
-          <Link to={`/user/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }

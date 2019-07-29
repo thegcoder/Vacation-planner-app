@@ -42,3 +42,31 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.displayImage {
+  display: inline;
+}
+
+.displayImage img {
+  width: 450px;
+  margin: 10px;
+}
+
+.displayText {
+  margin: 10px;
+}
+
+.profileImage img {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+}
+
+.formItem {
+  margin: 20px 10px;
+}

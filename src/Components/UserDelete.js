@@ -77,9 +77,9 @@ export default class UserDelete extends Component {
             <div>
               <div>{this.state.email}</div>
             </div>
-            <button>Submit</button>
+            <button className='search-btn'>Submit</button>
+            <Link to={`/user/${this.state.id}`}><input type="button" value="Cancel" className='search-btn' /></Link>
           </form>
-          <Link to={`/user/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }

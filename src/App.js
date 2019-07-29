@@ -31,19 +31,21 @@ import './App.css';
             <div className='nav-item'><Link to={'/users'}>Users</Link></div>
             <div className='nav-item'><a href="https://vacation-planner-api.herokuapp.com/">API</a></div>
           </div>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/destinations' component={Destinations} />
-            <Route path='/destination/delete/:id' component={DestinationDelete} />
-            <Route path='/destination/create' component={DestinationCreate} />
-            <Route path='/destination/edit/:id' component={DestinationEdit} />
-            <Route path='/destination/:id' component={DestinationData} />
-            <Route exact path='/users' component={Users} />
-            <Route path='/user/delete/:id' component={UserDelete} />
-            <Route path='/user/create' component={UserCreate} />
-            <Route path='/user/edit/:id' component={UserEdit} />
-            <Route path='/user/:id' component={UserData} />
-          </Switch>
+          <div className='content'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/destinations' component={Destinations} />
+              <Route path='/destination/delete/:id' component={DestinationDelete} />
+              <Route path='/destination/create' component={DestinationCreate} />
+              <Route path='/destination/edit/:id' component={DestinationEdit} />
+              <Route path='/destination/:id' component={DestinationData} />
+              <Route exact path='/users' component={Users} />
+              <Route path='/user/delete/:id' component={UserDelete} />
+              <Route path='/user/create' component={UserCreate} />
+              <Route path='/user/edit/:id' component={UserEdit} />
+              <Route path='/user/:id' component={UserData} />
+            </Switch>
+          </div>
         </div>
       </Router>
     )

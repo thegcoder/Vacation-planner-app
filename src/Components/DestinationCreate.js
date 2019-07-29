@@ -65,25 +65,25 @@ export default class DestinationEdit extends Component {
         <div>
           <h2>Edit Destination</h2>
           <form onSubmit={this.handleSubmit}>
-            <div>
+            <div className="formItem">
               <div>City: {this.state.city}</div>
               <input type="text" name="city" placeholder={this.state.city} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>Country: {this.state.country}</div>
               <input type="text" name="country" placeholder={this.state.country} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>Image Url: {this.state.imageUrl}</div>
               <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>Description: {this.state.description}</div>
               <input type="text" name="description" placeholder={this.state.description} onChange={this.handleChange}/>
             </div>
-            <button>Submit</button>
+            <button className='search-btn'>Submit</button>
+            <Link to={'/destinations'}><input type="button" value="Cancel" className='search-btn' /></Link>
           </form>
-          <Link to={`/destination/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }

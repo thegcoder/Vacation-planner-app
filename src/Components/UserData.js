@@ -34,15 +34,17 @@ export default class UserData extends Component {
     return (
       <div>
         <h2>User: {this.state.user.name}</h2>
-        <img src={this.state.user.imageUrl} alt={this.state.user.name} />
-        <ul>
-          <li>Email: {this.state.user.email}</li>
-        </ul>
+        <div className="profileImage">
+          <img src={this.state.user.imageUrl} alt={this.state.user.name} />
+        </div>
+        <div>
+          Email: {this.state.user.email}
+        </div>
         <Link to={{ pathname:`/user/edit/${this.state.user._id}`, state: { user: this.state.user } }}>
-          <button>Edit</button>
+          <button className='search-btn'>Edit</button>
         </Link>
         <Link to={{ pathname:`/user/delete/${this.state.user._id}`, state: { user: this.state.user } }}>
-          <button>Delete</button>
+          <button className='search-btn'>Delete</button>
         </Link>
       </div>
     )

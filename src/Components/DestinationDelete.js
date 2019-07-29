@@ -81,9 +81,9 @@ export default class DestinationDelete extends Component {
             <div>
               <div>{this.state.description}</div>
             </div>
-            <button>Submit</button>
+            <button className='search-btn'>Submit</button>
+            <Link to={`/destination/${this.state.id}`}><input type="button" value="Cancel" className='search-btn' /></Link>
           </form>
-          <Link to={`/destination/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }

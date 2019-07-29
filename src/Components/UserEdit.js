@@ -85,24 +85,24 @@ export default class UserEdit extends Component {
         <div>
           <h2>Edit User</h2>
           <form onSubmit={this.handleSubmit}>
-            <div>
+            <div className="formItem">
               <div>{this.state.name}</div>
               <label>Name:</label>
               <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>{this.state.email}</div>
               <label>Email:</label>
               <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>{this.state.imageUrl}</div>
               <label>Image Url:</label>
               <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
-            <button>Submit</button>
+            <button className='search-btn'>Submit</button>
+            <Link to={`/user/${this.state.id}`}><input type="button" value="Cancel" className='search-btn' /></Link>
           </form>
-          <Link to={`/user/${this.state.id}`}><button>Cancel</button></Link>
         </div>
     );
   }
