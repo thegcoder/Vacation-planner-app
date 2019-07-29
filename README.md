@@ -25,6 +25,7 @@ What I would like to add in version 2 would be a working calendar where users
   shared with them via data tracking capabilities.
 
 ##Planning Process
+
 [Stream of Thought](https://media.git.generalassemb.ly/user/20868/files/784c9e80-b1f2-11e9-821b-deec09db55be)
 
 [ERD](https://user-images.githubusercontent.com/46980815/61741564-3093c600-ad5f-11e9-8026-47e03e769d79.jpg)
