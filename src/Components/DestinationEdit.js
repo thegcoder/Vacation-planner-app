@@ -13,7 +13,8 @@ export default class DestinationEdit extends Component {
     this.state = {
       country: '',
       city: '',
-      description: ''
+      description: '',
+      imageUrl: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,6 +31,9 @@ export default class DestinationEdit extends Component {
         break;
       case 'description':
         this.setState({description: event.target.value});
+        break;
+      case 'imageUrl':
+        this.setState({imageUrl: event.target.value});
         break;
       default:
         break;
@@ -67,7 +71,8 @@ export default class DestinationEdit extends Component {
           country: res.data.country,
           city: res.data.city,
           description: res.data.description,
-          id: res.data._id
+          id: res.data._id,
+          imageUrl: res.data.imageUrl
         });
       })
       .catch(function (error) {
@@ -93,6 +98,11 @@ export default class DestinationEdit extends Component {
               <div>{this.state.city}</div>
               <label>Edit:</label>
               <input type="text" name="city" placeholder={this.state.city} onChange={this.handleChange}/>
+            </div>
+            <div>
+              <div>{this.state.imageUrl}</div>
+              <label>Edit:</label>
+              <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
             <div>
               <div>{this.state.description}</div>

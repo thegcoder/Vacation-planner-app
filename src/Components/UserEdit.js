@@ -13,7 +13,8 @@ export default class UserEdit extends Component {
     this.state = {
       email: '',
       id: '',
-      name: ''
+      name: '',
+      imageUrl: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,6 +25,9 @@ export default class UserEdit extends Component {
     switch (event.target.name) {
       case 'email':
         this.setState({email: event.target.value});
+        break;
+      case 'imageUrl':
+        this.setState({imageUrl: event.target.value});
         break;
       case 'name':
         this.setState({name: event.target.value});
@@ -63,7 +67,8 @@ export default class UserEdit extends Component {
         this.setState({
           email: res.data.email,
           id: res.data._id,
-          name: res.data.name
+          name: res.data.name,
+          imageUrl: res.data.imageUrl
         });
       })
       .catch(function (error) {
@@ -89,6 +94,11 @@ export default class UserEdit extends Component {
               <div>{this.state.email}</div>
               <label>Edit:</label>
               <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
+            </div>
+            <div>
+              <div>{this.state.imageUrl}</div>
+              <label>Edit:</label>
+              <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
             <button>Submit</button>
           </form>

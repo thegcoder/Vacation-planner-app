@@ -13,7 +13,8 @@ export default class UserCreate extends Component {
     this.state = {
       email: '',
       id: '',
-      name: ''
+      name: '',
+      imageUrl: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,6 +25,9 @@ export default class UserCreate extends Component {
     switch (event.target.name) {
       case 'email':
         this.setState({email: event.target.value});
+        break;
+      case 'imageUrl':
+        this.setState({imageUrl: event.target.value});
         break;
       case 'name':
         this.setState({name: event.target.value});
@@ -65,6 +69,10 @@ export default class UserCreate extends Component {
             <div>
               <div>Email: {this.state.email}</div>
               <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
+            </div>
+            <div>
+              <div>Image Url: {this.state.imageUrl}</div>
+              <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
             <button>Submit</button>
           </form>

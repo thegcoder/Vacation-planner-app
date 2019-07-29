@@ -13,7 +13,8 @@ export default class DestinationEdit extends Component {
     this.state = {
       country: '',
       city: '',
-      description: ''
+      description: '',
+      imageUrl: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,6 +31,9 @@ export default class DestinationEdit extends Component {
         break;
       case 'description':
         this.setState({description: event.target.value});
+        break;
+      case 'imageUrl':
+        this.setState({imageUrl: event.target.value});
         break;
       default:
         break;
@@ -68,6 +72,10 @@ export default class DestinationEdit extends Component {
             <div>
               <div>Country: {this.state.country}</div>
               <input type="text" name="country" placeholder={this.state.country} onChange={this.handleChange}/>
+            </div>
+            <div>
+              <div>Image Url: {this.state.imageUrl}</div>
+              <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
             <div>
               <div>Description: {this.state.description}</div>

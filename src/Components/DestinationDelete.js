@@ -13,7 +13,8 @@ export default class DestinationDelete extends Component {
     this.state = {
       country: '',
       city: '',
-      description: ''
+      description: '',
+      imageUrl: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +51,8 @@ export default class DestinationDelete extends Component {
           country: res.data.country,
           city: res.data.city,
           description: res.data.description,
-          id: res.data._id
+          id: res.data._id,
+          imageUrl: res.data.imageUrl
         });
       })
       .catch(function (error) {
@@ -68,10 +70,13 @@ export default class DestinationDelete extends Component {
           <h2>Delete Destination</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
+              <div>{this.state.city}</div>
+              </div>
+            <div>
               <div>{this.state.country}</div>
             </div>
             <div>
-              <div>{this.state.city}</div>
+              <div>{this.state.imageUrl}</div>
             </div>
             <div>
               <div>{this.state.description}</div>

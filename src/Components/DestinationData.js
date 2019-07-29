@@ -36,6 +36,7 @@ export default class UserData extends Component {
         <h2>City: {this.state.destination.city}</h2>
         <ul>
           <li>
+            <img src={this.state.destination.imageUrl} alt={this.state.destination.name}/>
             <h3>Country: {this.state.destination.country}</h3>
             <p>{this.state.destination.description}</p>
           </li>

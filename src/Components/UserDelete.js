@@ -13,7 +13,8 @@ export default class UserDelete extends Component {
     this.state = {
       email: '',
       id: '',
-      name: ''
+      name: '',
+      imageUrl: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,7 +50,8 @@ export default class UserDelete extends Component {
         this.setState({
           email: res.data.email,
           id: res.data._id,
-          name: res.data.name
+          name: res.data.name,
+          imageUrl: res.data.imageUrl
         });
       })
       .catch(function (error) {
@@ -66,6 +68,9 @@ export default class UserDelete extends Component {
         <div>
           <h2>Delete User</h2>
           <form onSubmit={this.handleSubmit}>
+            <div>
+              <div>{this.state.imageUrl}</div>
+            </div>
             <div>
               <div>{this.state.name}</div>
             </div>

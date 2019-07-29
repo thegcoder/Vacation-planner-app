@@ -37,7 +37,10 @@ export default class Users extends Component {
           {this.state.users.map((user, index) => {
             return (
               <div key={user._id}>
-                <Link to={`/user/${user._id}`}>{user.name}</Link>
+                <Link to={`/user/${user._id}`}>
+                  <img src={user.imageUrl} alt={user.name} />
+                  {user.name}
+                </Link>
               </div>
             )
           })}

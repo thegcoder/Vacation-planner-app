@@ -37,7 +37,10 @@ export default class Destinations extends Component {
           {this.state.destinations.map((destination, index) => {
             return (
               <div key={destination._id}>
-                <Link to={`/destination/${destination._id}`}>{destination.city}, {destination.country}</Link>
+                <Link to={`/destination/${destination._id}`}>
+                  <img src={destination.imageUrl} alt={destination.city} />
+                  {destination.city}, {destination.country}
+                </Link>
               </div>
             )
           })}
