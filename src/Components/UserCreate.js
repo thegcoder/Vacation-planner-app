@@ -62,15 +62,15 @@ export default class UserCreate extends Component {
         <div>
           <h2>Create User</h2>
           <form onSubmit={this.handleSubmit}>
-            <div>
+            <div className="formItem">
               <div>Name: {this.state.name}</div>
               <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>Email: {this.state.email}</div>
               <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
             </div>
-            <div>
+            <div className="formItem">
               <div>Image Url: {this.state.imageUrl}</div>
               <input type="text" name="imageUrl" placeholder={this.state.imageUrl} onChange={this.handleChange}/>
             </div>
