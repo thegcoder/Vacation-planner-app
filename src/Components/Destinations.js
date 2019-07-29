@@ -41,6 +41,7 @@ export default class Destinations extends Component {
               </div>
             )
           })}
+          <Link to={`/destination/create`}>Create Destination</Link>
         </div>
     );
   }

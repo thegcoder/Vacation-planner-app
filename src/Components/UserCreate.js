@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const api = 'https://vacation-planner-api.herokuapp.com/api/';
 
-export default class UserEdit extends Component {
+export default class UserCreate extends Component {
 
   constructor(props) {
     super(props);
@@ -40,31 +40,9 @@ export default class UserEdit extends Component {
 
     const history = this.props.history;
 
-    const id = this.state.id;
-
-    axios.post(`${api}update/users/${id}`, data)
+    axios.post(`${api}create/users`, data)
       .then(res => {
         history.push(`/user/${res.data._id}`);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
-      });
-  }
-
-  componentDidMount() {
-    const { id } = this.props.match.params;
-
-    axios.get(`${api}read/users/${id}`)
-      .then(res => {
-        this.setState({
-          email: res.data.email,
-          id: res.data._id,
-          name: res.data.name
-        });
       })
       .catch(function (error) {
         // handle error
@@ -78,16 +56,14 @@ export default class UserEdit extends Component {
   render() {
     return (
         <div>
-          <h2>Edit User</h2>
+          <h2>Create User</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
-              <div>{this.state.name}</div>
-              <label>Edit:</label>
+              <div>Name: {this.state.name}</div>
               <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
             </div>
             <div>
-              <div>{this.state.email}</div>
-              <label>Edit:</label>
+              <div>Email: {this.state.email}</div>
               <input type="text" name="email" placeholder={this.state.email} onChange={this.handleChange}/>
             </div>
             <button>Submit</button>

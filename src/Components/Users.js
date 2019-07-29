@@ -41,6 +41,7 @@ export default class Users extends Component {
               </div>
             )
           })}
+          <Link to={`/user/create`}>Create User</Link>
         </div>
     );
   }
